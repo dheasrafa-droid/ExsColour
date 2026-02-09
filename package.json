@@ -1,0 +1,84 @@
+{
+  "name": "exscolour",
+  "version": "3.2.1",
+  "description": "Comprehensive colour system for Engine projects with British English spelling",
+  "main": "src/ExsColourSystem.js",
+  "type": "module",
+  "files": [
+    "src/**/*.js",
+    "!src/**/*.test.js"
+  ],
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "build": "npm run lint && npm test",
+    "docs": "jsdoc -c jsdoc.config.json -d docs/api",
+    "serve": "http-server ./ -p 8080",
+    "example:basic": "open examples/basic-usage.html",
+    "example:palette": "open examples/palette-generator.html",
+    "example:gradient": "open examples/gradient-editor.html",
+    "example:theme": "open examples/theme-builder.html"
+  },
+  "keywords": [
+    "colour",
+    "color",
+    "exs",
+    "engine",
+    "palette",
+    "gradient",
+    "scheme",
+    "accessibility",
+    "british-english"
+  ],
+  "author": "Exs Engine Development Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dheasrafa-droid/ExsColour.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dheasrafa-droid/ExsColour/issues"
+  },
+  "homepage": "https://github.com/dheasrafa-droid/ExsColour#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.56.0",
+    "jsdoc": "^4.0.3",
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "exports": {
+    ".": "./src/ExsColourSystem.js",
+    "./constants": "./src/core/ExsConstantsColour.js",
+    "./utils": "./src/core/ExsColourUtils.js",
+    "./algorithm": "./src/core/ExsColourAlgorithm.js",
+    "./colour": "./src/classes/ExsColour.js",
+    "./palette": "./src/classes/ExsColourPalette.js",
+    "./gradient": "./src/classes/ExsColourGradient.js",
+    "./scheme": "./src/classes/ExsColourScheme.js",
+    "./manager": "./src/classes/ExsColourManager.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "moduleFileExtensions": ["js", "mjs"],
+    "testMatch": ["**/tests/**/*.test.js"],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov", "html"]
+  }
+}
